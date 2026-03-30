@@ -8,16 +8,104 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .map-wrapper {
-    margin-top: 56px;
-    border: 1px solid #e0e4ed;
+  .kontakt-wrap {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 0;
+    border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 4px 32px rgba(15,12,116,0.10);
+    margin-bottom: 48px;
+  }
+
+  .kontakt-info-panel {
+    background: var(--navy);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .kontakt-info-panel h2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 32px;
+    text-transform: uppercase;
+  }
+
+  .kontakt-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .kontakt-info-row svg {
+    width: 18px;
+    height: 18px;
+    fill: rgba(255,255,255,0.6);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .kontakt-info-row p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.82);
+    margin: 0;
+  }
+
+  .kontakt-info-row a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+  }
+  .kontakt-info-row a:hover { color: #fff; text-decoration: underline; }
+
+  .kontakt-info-img {
+    margin-top: auto;
+    padding-top: 40px;
+  }
+  .kontakt-info-img img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    opacity: 0.75;
+  }
+
+  .kontakt-form-panel {
+    background: #fff;
+    padding: 48px 48px;
+  }
+
+  .kontakt-form-panel h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+    margin: 0 0 28px;
+    text-transform: uppercase;
+  }
+
+  .map-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e0e4ed;
   }
   .map-wrapper iframe {
     width: 100%;
     height: 340px;
     border: none;
     display: block;
+  }
+
+  @media (max-width: 900px) {
+    .kontakt-wrap { grid-template-columns: 1fr; }
+    .kontakt-info-img { display: none; }
+    .kontakt-form-panel { padding: 32px 24px; }
+    .kontakt-info-panel { padding: 36px 24px; }
   }
 </style>
 </head>
@@ -55,36 +143,43 @@
 
   <h1 style="color:var(--navy);margin-bottom:36px">Kontakt</h1>
 
-  <div class="contact-grid">
+  <div class="kontakt-wrap">
 
-    <!-- CONTACT INFO -->
-    <div class="contact-info">
+    <!-- LEFT: INFO PANEL -->
+    <div class="kontakt-info-panel">
       <h2>Cartonal AG</h2>
-      <p>
-        Rugghölzli 2<br>
-        CH-5453 Remetschwil
-      </p>
-      <p>
-        Tel. <a href="tel:+41564856060">+41 56 485 60 60</a><br>
-        Fax. +41 56 485 60 61
-      </p>
-      <p>
-        <a href="mailto:info@cartonal.ch">info@cartonal.ch</a>
-      </p>
 
-      <div style="margin-top:32px">
-        <img src="Cartonal_Papiere-mit-Logo-scaled.jpg" alt="Cartonal Papiere" style="width:100%;max-width:340px;height:auto;display:block;">
+      <div class="kontakt-info-row">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <p>Rugghölzli 2<br>CH-5453 Remetschwil</p>
+      </div>
+
+      <div class="kontakt-info-row">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <p>
+          <a href="tel:+41564856060">+41 56 485 60 60</a><br>
+          Fax +41 56 485 60 61
+        </p>
+      </div>
+
+      <div class="kontakt-info-row">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <p><a href="mailto:info@cartonal.ch">info@cartonal.ch</a></p>
+      </div>
+
+      <div class="kontakt-info-img">
+        <img src="Cartonal_Papiere-mit-Logo-scaled.jpg" alt="Cartonal Papiere">
       </div>
     </div>
 
-    <!-- CONTACT FORM -->
-    <div class="contact-form">
+    <!-- RIGHT: FORM PANEL -->
+    <div class="kontakt-form-panel">
       <h2>Schreiben Sie uns</h2>
 
-      <div id="form-success-block" style="display:none;padding:32px 24px;background:#f0f7f0;border:1px solid #b6d9b6;border-radius:6px;text-align:center;">
-        <svg style="width:40px;height:40px;fill:#2e7d32;margin-bottom:12px" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4.5-4.5 1.41-1.41L10 13.67l7.09-7.09 1.41 1.41L10 16.5z"/></svg>
-        <p style="font-size:16px;font-weight:600;color:#1b5e20;margin-bottom:6px">Vielen Dank für Ihre Nachricht!</p>
-        <p style="font-size:14px;color:#388e3c;margin:0">Wir melden uns so bald wie möglich bei Ihnen.</p>
+      <div id="form-success-block" style="display:none;padding:40px 24px;text-align:center;">
+        <svg style="width:48px;height:48px;fill:var(--navy);margin-bottom:16px" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4.5-4.5 1.41-1.41L10 13.67l7.09-7.09 1.41 1.41L10 16.5z"/></svg>
+        <p style="font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px">Vielen Dank für Ihre Nachricht!</p>
+        <p style="font-size:14px;color:var(--text-light);margin:0">Wir melden uns so bald wie möglich bei Ihnen.</p>
       </div>
 
       <form id="contact-form" action="https://formspree.io/f/xbdpobbb" method="post" novalidate>
@@ -109,9 +204,21 @@
             <span class="field-error" id="err-nachname"></span>
           </div>
         </div>
-        <div class="form-group">
-          <label for="firma">Firma</label>
-          <input type="text" id="firma" name="firma" placeholder="Ihre Firma" autocomplete="organization">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firma">Firma</label>
+            <input type="text" id="firma" name="firma" placeholder="Ihre Firma" autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="thema">Thema</label>
+            <select id="thema" name="thema">
+              <option value="">Bitte wählen</option>
+              <option value="Verpackung">Verpackung</option>
+              <option value="Grafisch">Grafisches Papier</option>
+              <option value="Spezialitäten">Spezialitäten</option>
+              <option value="Allgemein">Allgemeine Anfrage</option>
+            </select>
+          </div>
         </div>
         <div class="form-row">
           <div class="form-group">
@@ -125,29 +232,19 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="thema">Thema</label>
-          <select id="thema" name="thema">
-            <option value="">Bitte wählen</option>
-            <option value="Verpackung">Verpackung</option>
-            <option value="Grafisch">Grafisches Papier</option>
-            <option value="Spezialitäten">Spezialitäten</option>
-            <option value="Allgemein">Allgemeine Anfrage</option>
-          </select>
-        </div>
-        <div class="form-group">
           <label for="nachricht">Nachricht *</label>
-          <textarea id="nachricht" name="nachricht" placeholder="Ihre Nachricht..."></textarea>
+          <textarea id="nachricht" name="nachricht" placeholder="Wie können wir Ihnen helfen?"></textarea>
           <span class="field-error" id="err-nachricht"></span>
         </div>
         <div class="form-group" style="flex-direction:row;align-items:flex-start;gap:10px;margin-top:4px">
-          <input type="checkbox" id="datenschutz" name="datenschutz" style="margin-top:3px;flex-shrink:0;width:16px;height:16px;cursor:pointer">
-          <label for="datenschutz" style="font-size:13px;font-weight:400;color:var(--text-light);cursor:pointer;line-height:1.5">
-            Ich habe die <a href="unternehmen.html" style="color:var(--navy)">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+          <input type="checkbox" id="datenschutz" name="datenschutz" style="margin-top:3px;flex-shrink:0;width:15px;height:15px;cursor:pointer;accent-color:var(--navy)">
+          <label for="datenschutz" style="font-size:13px;font-weight:400;color:var(--text-light);cursor:pointer;line-height:1.6">
+            Ich stimme der Verarbeitung meiner Daten gemäss <a href="unternehmen.html" style="color:var(--navy)">Datenschutzerklärung</a> zu. *
           </label>
         </div>
-        <span class="field-error" id="err-datenschutz" style="margin-top:-8px"></span>
-        <div class="form-submit" style="margin-top:16px">
-          <button type="submit" class="btn" id="submit-btn">
+        <span class="field-error" id="err-datenschutz"></span>
+        <div class="form-submit" style="margin-top:20px">
+          <button type="submit" class="btn" id="submit-btn" style="padding:14px 36px;font-size:14px;letter-spacing:0.8px">
             <span id="btn-text">Nachricht senden</span>
             <span id="btn-loading" style="display:none">Wird gesendet…</span>
           </button>
@@ -155,13 +252,6 @@
       </form>
     </div>
 
-  </div>
-
-  <hr class="separator">
-
-  <div class="cta-block">
-    <p>Benötigen Sie mehr Informationen zu unseren Produkten?</p>
-    <a href="produkte.html" class="btn">Mehr erfahren!</a>
   </div>
 
   <!-- Map -->
