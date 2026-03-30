@@ -80,42 +80,77 @@
     <!-- CONTACT FORM -->
     <div class="contact-form">
       <h2>Schreiben Sie uns</h2>
-      <form action="#" method="post" onsubmit="handleSubmit(event)">
+
+      <div id="form-success-block" style="display:none;padding:32px 24px;background:#f0f7f0;border:1px solid #b6d9b6;border-radius:6px;text-align:center;">
+        <svg style="width:40px;height:40px;fill:#2e7d32;margin-bottom:12px" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4.5-4.5 1.41-1.41L10 13.67l7.09-7.09 1.41 1.41L10 16.5z"/></svg>
+        <p style="font-size:16px;font-weight:600;color:#1b5e20;margin-bottom:6px">Vielen Dank für Ihre Nachricht!</p>
+        <p style="font-size:14px;color:#388e3c;margin:0">Wir melden uns so bald wie möglich bei Ihnen.</p>
+      </div>
+
+      <form id="contact-form" action="https://formspree.io/f/xbdpobbb" method="post" novalidate>
+        <div class="form-group">
+          <label for="anrede">Anrede</label>
+          <select id="anrede" name="anrede">
+            <option value="">Bitte wählen</option>
+            <option value="Herr">Herr</option>
+            <option value="Frau">Frau</option>
+            <option value="Divers">Divers</option>
+          </select>
+        </div>
         <div class="form-row">
           <div class="form-group">
             <label for="vorname">Vorname *</label>
-            <input type="text" id="vorname" name="vorname" placeholder="Ihr Vorname" required>
+            <input type="text" id="vorname" name="vorname" placeholder="Ihr Vorname" autocomplete="given-name">
+            <span class="field-error" id="err-vorname"></span>
           </div>
           <div class="form-group">
             <label for="nachname">Nachname *</label>
-            <input type="text" id="nachname" name="nachname" placeholder="Ihr Nachname" required>
+            <input type="text" id="nachname" name="nachname" placeholder="Ihr Nachname" autocomplete="family-name">
+            <span class="field-error" id="err-nachname"></span>
           </div>
         </div>
         <div class="form-group">
-          <label for="email">E-Mail *</label>
-          <input type="email" id="email" name="email" placeholder="ihre@email.ch" required>
-        </div>
-        <div class="form-group">
-          <label for="telefon">Telefon</label>
-          <input type="tel" id="telefon" name="telefon" placeholder="+41 XX XXX XX XX">
-        </div>
-        <div class="form-group">
           <label for="firma">Firma</label>
-          <input type="text" id="firma" name="firma" placeholder="Ihre Firma">
+          <input type="text" id="firma" name="firma" placeholder="Ihre Firma" autocomplete="organization">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" name="email" placeholder="ihre@email.ch" autocomplete="email">
+            <span class="field-error" id="err-email"></span>
+          </div>
+          <div class="form-group">
+            <label for="telefon">Telefon</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="+41 XX XXX XX XX" autocomplete="tel">
+          </div>
         </div>
         <div class="form-group">
-          <label for="betreff">Betreff *</label>
-          <input type="text" id="betreff" name="betreff" placeholder="Betreff Ihrer Anfrage" required>
+          <label for="thema">Thema</label>
+          <select id="thema" name="thema">
+            <option value="">Bitte wählen</option>
+            <option value="Verpackung">Verpackung</option>
+            <option value="Grafisch">Grafisches Papier</option>
+            <option value="Spezialitäten">Spezialitäten</option>
+            <option value="Allgemein">Allgemeine Anfrage</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="nachricht">Nachricht *</label>
-          <textarea id="nachricht" name="nachricht" placeholder="Ihre Nachricht..." required></textarea>
+          <textarea id="nachricht" name="nachricht" placeholder="Ihre Nachricht..."></textarea>
+          <span class="field-error" id="err-nachricht"></span>
         </div>
-        <div class="form-submit">
-          <button type="submit" class="btn">Nachricht senden</button>
+        <div class="form-group" style="flex-direction:row;align-items:flex-start;gap:10px;margin-top:4px">
+          <input type="checkbox" id="datenschutz" name="datenschutz" style="margin-top:3px;flex-shrink:0;width:16px;height:16px;cursor:pointer">
+          <label for="datenschutz" style="font-size:13px;font-weight:400;color:var(--text-light);cursor:pointer;line-height:1.5">
+            Ich habe die <a href="unternehmen.html" style="color:var(--navy)">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+          </label>
         </div>
-        <div id="form-success" style="display:none;margin-top:14px;padding:12px 16px;background:#e8f5e9;border-radius:4px;color:#2e7d32;font-size:14px;">
-          Vielen Dank für Ihre Nachricht! Wir melden uns so bald wie möglich.
+        <span class="field-error" id="err-datenschutz" style="margin-top:-8px"></span>
+        <div class="form-submit" style="margin-top:16px">
+          <button type="submit" class="btn" id="submit-btn">
+            <span id="btn-text">Nachricht senden</span>
+            <span id="btn-loading" style="display:none">Wird gesendet…</span>
+          </button>
         </div>
       </form>
     </div>
@@ -162,11 +197,75 @@
 </footer>
 
 <script>
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById('form-success').style.display = 'block';
-  e.target.reset();
-}
+(function () {
+  var form = document.getElementById('contact-form');
+
+  function setError(id, msg) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = msg;
+  }
+  function clearErrors() {
+    ['err-vorname','err-nachname','err-email','err-nachricht','err-datenschutz'].forEach(function(id) {
+      setError(id, '');
+    });
+    form.querySelectorAll('input, textarea').forEach(function(el) {
+      el.style.borderColor = '';
+    });
+  }
+  function markInvalid(inputId, errId, msg) {
+    var input = document.getElementById(inputId);
+    if (input) input.style.borderColor = '#c0392b';
+    setError(errId, msg);
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    clearErrors();
+
+    var vorname   = document.getElementById('vorname').value.trim();
+    var nachname  = document.getElementById('nachname').value.trim();
+    var email     = document.getElementById('email').value.trim();
+    var nachricht = document.getElementById('nachricht').value.trim();
+    var datenschutz = document.getElementById('datenschutz').checked;
+    var emailRe   = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var valid     = true;
+
+    if (!vorname)  { markInvalid('vorname', 'err-vorname', 'Bitte geben Sie Ihren Vornamen ein.'); valid = false; }
+    if (!nachname) { markInvalid('nachname', 'err-nachname', 'Bitte geben Sie Ihren Nachnamen ein.'); valid = false; }
+    if (!email || !emailRe.test(email)) { markInvalid('email', 'err-email', 'Bitte geben Sie eine gültige E-Mail-Adresse ein.'); valid = false; }
+    if (!nachricht) { markInvalid('nachricht', 'err-nachricht', 'Bitte geben Sie Ihre Nachricht ein.'); valid = false; }
+    if (!datenschutz) { setError('err-datenschutz', 'Bitte stimmen Sie der Datenschutzerklärung zu.'); valid = false; }
+
+    if (!valid) return;
+
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    document.getElementById('btn-text').style.display = 'none';
+    document.getElementById('btn-loading').style.display = 'inline';
+
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res) {
+      btn.disabled = false;
+      document.getElementById('btn-text').style.display = 'inline';
+      document.getElementById('btn-loading').style.display = 'none';
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success-block').style.display = 'block';
+      } else {
+        setError('err-datenschutz', 'Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an info@cartonal.ch.');
+      }
+    }).catch(function() {
+      btn.disabled = false;
+      document.getElementById('btn-text').style.display = 'inline';
+      document.getElementById('btn-loading').style.display = 'none';
+      setError('err-datenschutz', 'Keine Verbindung. Bitte versuchen Sie es erneut.');
+    });
+  });
+})();
 </script>
 
 </body>
