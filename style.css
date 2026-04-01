@@ -246,7 +246,7 @@ nav a:hover { opacity: .65; }
 .page-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 56px 60px 80px;
+  padding: 56px 0 80px;
 }
 
 .page-content h1 {
