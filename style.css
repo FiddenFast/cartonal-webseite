@@ -49,6 +49,7 @@ header {
   width: 200px;
   height: 42px;
   display: block;
+  color: transparent;
 }
 
 nav {
