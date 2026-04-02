@@ -2,6 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(node -e \":*)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\finnh_2qa64z9\\OneDrive - BBBaden\\Privat\\Cartonal"
     ]
   }
 }
