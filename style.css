@@ -78,6 +78,20 @@ nav a {
 
 nav a:hover { opacity: .65; }
 
+nav .nav-item > a.nav-active {
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: 2px;
+  opacity: 1;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.vp-section, .news-section, .page-content {
+  animation: pageFadeIn 0.35s ease;
+}
+
 /* Dropdown */
 .dropdown {
   position: absolute;
