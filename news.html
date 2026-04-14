@@ -6,6 +6,86 @@
 <title>Papier und Karton Spezialist seit 1973 | CARTONAL AG</title>
 <meta name="description" content="Seit 1973 Ihr Experte für hochwertiges Papier und Karton. Neuigkeiten über uns und rund um Papier und Karton.">
 <link rel="stylesheet" href="style.css">
+<style>
+
+.news-hero {
+  background: var(--navy);
+  padding: 72px 60px;
+}
+.news-hero .label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 14px;
+}
+.news-hero h1 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 0;
+}
+
+.news-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 60px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 72px;
+}
+
+.news-card {
+  background: #fff;
+  border: 1px solid #e8eaf0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.news-card:hover {
+  box-shadow: 0 8px 32px rgba(15,12,116,0.10);
+  transform: translateY(-3px);
+}
+.news-card-img {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: #f7f8fb;
+}
+.news-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.news-card-body {
+  padding: 24px 26px 28px;
+}
+.news-card-body h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.news-card-body p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .news-hero { padding: 48px 24px; }
+  .news-grid { grid-template-columns: 1fr; gap: 16px; }
+  .news-section { padding: 48px 24px; }
+}
+
+</style>
 </head>
 <body>
 
@@ -36,39 +116,47 @@
   </nav>
 </header>
 
-<!-- PAGE CONTENT -->
-<div class="page-content">
+<!-- HERO -->
+<div class="news-hero">
+  <p class="label">Aktuelles</p>
+  <h1>News</h1>
+</div>
 
-  <h1 style="color:var(--navy);margin-bottom:40px">News</h1>
+<!-- NEWS GRID -->
+<div class="news-section">
+  <div class="news-grid">
 
-  <!-- News 1: Neuer Webauftritt -->
-  <div class="news-item">
-    <img src="32_AdobeStock_164962019-scaled.jpeg" alt="Würfel mit Symbolen">
-    <div>
-      <h2>Neuer Webauftritt!</h2>
-      <p>Willkommen auf unserer neu gestalteten Website!</p>
+    <div class="news-card">
+      <div class="news-card-img">
+        <img src="32_AdobeStock_164962019-scaled.jpeg" alt="Würfel mit Symbolen">
+      </div>
+      <div class="news-card-body">
+        <h2>Neuer Webauftritt!</h2>
+        <p>Willkommen auf unserer neu gestalteten Website!</p>
+      </div>
     </div>
-  </div>
 
-  <!-- News 2: Dünndruck -->
-  <div class="news-item">
-    <img src="AdobeStock_254922263-scaled.jpeg" alt="Mehrere Bücher aufeinander gestapelt">
-    <div>
-      <h2>Dünndruck</h2>
-      <p>Für die Herstellung von Packungsbeilagen und religiöser Bücher liefern wir der anspruchsvollen Schweizer Kundschaft Dünndruckpapier ab 28 g/m² in weiss oder creme – garantiert ohne Löcher und mit einer Opazität, die Sie erstaunen wird.</p>
+    <div class="news-card">
+      <div class="news-card-img">
+        <img src="AdobeStock_254922263-scaled.jpeg" alt="Mehrere Bücher aufeinander gestapelt">
+      </div>
+      <div class="news-card-body">
+        <h2>Dünndruck</h2>
+        <p>Für die Herstellung von Packungsbeilagen und religiöser Bücher liefern wir der anspruchsvollen Schweizer Kundschaft Dünndruckpapier ab 28 g/m² in weiss oder creme – garantiert ohne Löcher und mit einer Opazität, die Sie erstaunen wird.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- News 3: 50-jähriges Jubiläum -->
-  <div class="news-item">
-    <img src="AdobeStock_89069230-scaled.jpeg" alt="Champagner Flasche 50 Jahre">
-    <div>
-      <h2>50-jähriges Jubiläum!</h2>
-      <p>Seit 1973 sind wir, die <strong>CARTONAL AG</strong>, DIE Drehscheibe für Papier und Karton. Wir danken unseren langjährigen und auch neuen Kunden und Lieferanten für die gute Zusammenarbeit! Auf die nächsten 50 Jahre!</p>
+    <div class="news-card">
+      <div class="news-card-img">
+        <img src="AdobeStock_89069230-scaled.jpeg" alt="Champagner Flasche 50 Jahre">
+      </div>
+      <div class="news-card-body">
+        <h2>50-jähriges Jubiläum!</h2>
+        <p>Seit 1973 sind wir, die <strong>CARTONAL AG</strong>, DIE Drehscheibe für Papier und Karton. Wir danken unseren langjährigen und auch neuen Kunden und Lieferanten für die gute Zusammenarbeit! Auf die nächsten 50 Jahre!</p>
+      </div>
     </div>
-  </div>
 
-  <hr class="separator">
+  </div>
 
   <div class="cta-block">
     <p>Benötigen Sie mehr Informationen?</p>
