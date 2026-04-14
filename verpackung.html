@@ -6,6 +6,115 @@
 <title>Verpackung: Pergamin, Papierkissen, Graukarton &amp; mehr | CARTONAL AG</title>
 <meta name="description" content="CARTONAL bietet Polsterkissen, Pergamin, Graukarton und mehr für Ihre nachhaltigen Verpackungsanforderungen. Entdecken Sie unsere innovativen Lösungen.">
 <link rel="stylesheet" href="style.css">
+<style>
+
+.vp-hero {
+  background: var(--navy);
+  padding: 72px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.vp-hero-text .label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 14px;
+}
+.vp-hero-text h1 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+.vp-hero-text p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+}
+.vp-hero-img {
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+.vp-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* GRID */
+.vp-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px;
+}
+.vp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 72px;
+}
+.vp-card {
+  background: #fff;
+  border: 1px solid #e8eaf0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.vp-card:hover {
+  box-shadow: 0 8px 32px rgba(15,12,116,0.10);
+  transform: translateY(-3px);
+}
+.vp-card-img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #f7f8fb;
+}
+.vp-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vp-card-img img.contain {
+  object-fit: contain;
+}
+.vp-card-body {
+  padding: 24px 26px 28px;
+}
+.vp-card-body h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.vp-card-body p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.75;
+}
+.vp-card-body a {
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .vp-hero { grid-template-columns: 1fr; padding: 48px 24px; }
+  .vp-hero-img { display: none; }
+  .vp-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .vp-section { padding: 48px 24px; }
+}
+@media (max-width: 560px) {
+  .vp-grid { grid-template-columns: 1fr; }
+}
+
+</style>
 </head>
 <body>
 
@@ -36,130 +145,129 @@
   </nav>
 </header>
 
-<!-- HERO BANNER -->
-<div style="background:var(--navy);padding:64px 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-  <div>
-    <p style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:14px">Produktbereich</p>
-    <h1 style="font-size:clamp(28px,3.5vw,48px);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-0.5px;margin-bottom:20px">Verpackung</h1>
-    <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.8">Aus Frischfasern hergestelltes Papier für die Verpackung von Lebensmitteln ist die bevorzugte Wahl für Premium-Produkte aller Art. Lassen Sie sich inspirieren.</p>
+<!-- HERO -->
+<div class="vp-hero">
+  <div class="vp-hero-text">
+    <p class="label">Produktbereich</p>
+    <h1>Verpackung</h1>
+    <p>Aus Frischfasern hergestelltes Papier für die Verpackung von Lebensmitteln ist die bevorzugte Wahl für Premium-Produkte aller Art. Lassen Sie sich inspirieren.</p>
   </div>
-  <div style="border-radius:4px;overflow:hidden;aspect-ratio:16/9">
-    <img src="Bakewell-1536x1024.jpg" alt="Verpackung" style="width:100%;height:100%;object-fit:cover;display:block">
+  <div class="vp-hero-img">
+    <img src="Bakewell-1536x1024.jpg" alt="Verpackung">
   </div>
 </div>
 
 <!-- PRODUCT GRID -->
-<div style="max-width:1200px;margin:0 auto;padding:80px 60px">
+<div class="vp-section">
+  <div class="vp-grid">
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e8eaf0;border:2px solid #e8eaf0;border-radius:6px;overflow:hidden;margin-bottom:80px">
-
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden">
-        <img src="32_FlexPack-PackPro2_web-1.jpg" alt="Mehrzweckpapiere" style="width:100%;height:100%;object-fit:cover;display:block">
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="32_FlexPack-PackPro2_web-1.jpg" alt="Mehrzweckpapiere">
       </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Mehrzweckpapiere</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7">Durch den Einsatz intelligenter und moderner Plattformtechnologie hat Brigl &amp; Bergmeister eine breite Palette von <strong>Mehrzweckpapieren</strong> entwickelt, die sich durch höchste Effizienz kennzeichnet und besonders gut für den Flexodruck geeignet sind. Mehr Details finden Sie <a href="https://www.brigl-bergmeister.com/start/produkte/flexible-verpackungspapiere/" target="_blank" style="color:var(--navy)">hier</a> oder fragen Sie uns!</p>
+      <div class="vp-card-body">
+        <h3>Mehrzweckpapiere</h3>
+        <p>Durch den Einsatz intelligenter und moderner Plattformtechnologie hat Brigl &amp; Bergmeister eine breite Palette von <strong>Mehrzweckpapieren</strong> entwickelt, die sich durch höchste Effizienz kennzeichnet und besonders gut für den Flexodruck geeignet sind. Mehr Details finden Sie <a href="https://www.brigl-bergmeister.com/start/produkte/flexible-verpackungspapiere/" target="_blank">hier</a> oder fragen Sie uns!</p>
       </div>
     </div>
 
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden;background:#fff">
-        <img src="flasche-etikette.png" alt="Etikettenpapier" style="width:100%;height:100%;object-fit:contain;display:block">
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="flasche-etikette.png" alt="Etikettenpapier" class="contain">
       </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Etikettenpapiere</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7">Wir sind stolz auch die <strong>Etikettenpapiere</strong> von Brigl &amp; Bergmeister in der Schweiz vertreiben zu dürfen – eine Übersicht über die Produktepalette finden Sie <a href="https://www.brigl-bergmeister.com/start/produkte/etikettenpapiere/" target="_blank" style="color:var(--navy)">hier</a>.<br>Für weitere Auskünfte freuen wir uns von Ihnen zu hören!</p>
-      </div>
-    </div>
-
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden">
-        <img src="AdobeStock_420868546-1536x1025.jpeg" alt="Kraftpapier" style="width:100%;height:100%;object-fit:cover;display:block">
-      </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Kraftpapier</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7"><strong>Kraftpapier naturbraun ungebleicht</strong> für Brotbeutel, Obstsack und alle Verpackungen, die wahre Nachhaltigkeit kommunizieren. <strong>Kraftpapier weiss gebleicht</strong> wird für die Herstellung von Zucker- und Mehlbeuteln verwendet.<br>Seit dem Verbot von Kunststoff-Beuteln im Supermarkt in diversen europäischen Ländern, sind Einkaufstaschen aus Kraftpapier eine optisch ansprechende und ökologische Alternative zu Plastikbeuteln.</p>
+      <div class="vp-card-body">
+        <h3>Etikettenpapiere</h3>
+        <p>Wir sind stolz auch die <strong>Etikettenpapiere</strong> von Brigl &amp; Bergmeister in der Schweiz vertreiben zu dürfen – eine Übersicht über die Produktepalette finden Sie <a href="https://www.brigl-bergmeister.com/start/produkte/etikettenpapiere/" target="_blank">hier</a>.<br>Für weitere Auskünfte freuen wir uns von Ihnen zu hören!</p>
       </div>
     </div>
 
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden">
-        <img src="quer_AdobeStock_605972903-scaled.jpeg" alt="Pergamin" style="width:100%;height:100%;object-fit:cover;display:block">
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="AdobeStock_420868546-1536x1025.jpeg" alt="Kraftpapier">
       </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Pergamin & Fettdichtes Papier</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7"><strong>Pergamin</strong> – ein natürlich fettdichtes und leicht transparentes Papier zur Verpackung von Lebensmitteln wie Schokolade oder Backwaren. Kombiniert die Atmungsaktivität von Papier mit den geruchsneutralen Eigenschaften einer Folie. Lieferbar auch mit Slip-Easy Beschichtung für Pralinen-Kapseln.<br><br><strong>Fettdichtes Papier</strong>, klassisch auch als Pergamentersatz bezeichnet, besteht aus 100% Zellstoff. Die Papierindustrie arbeitet an neuen Barrieren, die Kunststoff-Folien ersetzen werden.</p>
-      </div>
-    </div>
-
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden">
-        <img src="32_Polsterkissen_Wood-scaled.jpg" alt="Papierkissen" style="width:100%;height:100%;object-fit:cover;display:block">
-      </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Papierkissen</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7"><strong>Papierkissen</strong>, auch Polsterkissen oder Pralinenpolster genannt, werden hauptsächlich für das Verpacken von liebevoll produzierter und hochwertiger Schokolade eingesetzt. Transportschutz und Marketing gehen Hand in Hand.<br><br>Wir liefern in 3–9 Lagen in weiss, braun oder schwarz. Endlos produziert, auf Mass geschnitten oder gestanzt. Mit Inhouse Flexodruck setzen wir Ihr Logo in Szene. Fragen Sie uns!</p>
+      <div class="vp-card-body">
+        <h3>Kraftpapier</h3>
+        <p><strong>Kraftpapier naturbraun ungebleicht</strong> für Brotbeutel, Obstsack und alle Verpackungen, die wahre Nachhaltigkeit kommunizieren. <strong>Kraftpapier weiss gebleicht</strong> wird für die Herstellung von Zucker- und Mehlbeuteln verwendet.<br>Seit dem Verbot von Kunststoff-Beuteln im Supermarkt in diversen europäischen Ländern, sind Einkaufstaschen aus Kraftpapier eine optisch ansprechende und ökologische Alternative zu Plastikbeuteln.</p>
       </div>
     </div>
 
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden">
-        <img src="DSC01098-1536x1024.jpg" alt="Feinwelle" style="width:100%;height:100%;object-fit:cover;display:block">
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="quer_AdobeStock_605972903-scaled.jpeg" alt="Pergamin">
       </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Feinwelle</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7"><strong>Feinwelle</strong>, aus zwei Lagen Kraftpapier hergestellter Wellkarton, für die hochwertige Verpackung von Biscuits und schlagempfindlichen Lebensmitteln. Mit und ohne Fettdichte, in Rolle oder Zuschnitten – wir haben das passende Produkt für Sie!</p>
-      </div>
-    </div>
-
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden">
-        <img src="Bakewell-1536x1024.jpg" alt="Bake-Well" style="width:100%;height:100%;object-fit:cover;display:block">
-      </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Backformen Bake-Well®</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7"><strong>Backformen Bake-Well®</strong> – Beste Backeigenschaften, exzellenter Transportschutz direkt in der ansprechenden Verpackung für den POS. Für Kuchen, Brot oder Feingebäck — aus dem Haus <a href="http://www.pillopak.nl/" target="_blank" style="color:var(--navy)">PilloPak</a>. Geeignet für Backofen und Mikrowelle.</p>
+      <div class="vp-card-body">
+        <h3>Pergamin &amp; Fettdichtes Papier</h3>
+        <p><strong>Pergamin</strong> – ein natürlich fettdichtes und leicht transparentes Papier zur Verpackung von Lebensmitteln wie Schokolade oder Backwaren. Kombiniert die Atmungsaktivität von Papier mit den geruchsneutralen Eigenschaften einer Folie. Lieferbar auch mit Slip-Easy Beschichtung für Pralinen-Kapseln.<br><br><strong>Fettdichtes Papier</strong>, klassisch auch als Pergamentersatz bezeichnet, besteht aus 100% Zellstoff. Die Papierindustrie arbeitet an neuen Barrieren, die Kunststoff-Folien ersetzen werden.</p>
       </div>
     </div>
 
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden">
-        <img src="edit_IMG_20231102_152055_TG-1-1024x683.jpg" alt="Triplexkarton" style="width:100%;height:100%;object-fit:cover;display:block">
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="32_Polsterkissen_Wood-scaled.jpg" alt="Papierkissen">
       </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Triplexkarton</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7"><strong>Gestrichener Triplexkarton GT2</strong> für ansprechende Verkaufsverpackungen — vielfarbig bedruckbar, prägbar, stanzbar. Lieferbar mit Migrationsbarriere, Fettbarriere, PE-Beschichtung, 2-seitig gestrichen.<br><br><strong>Ungestrichener Triplexkarton UT2</strong>: weiss gedeckt, matter Oberfläche — verhindert Verschmieren bei Inkjet-Strichcodes.</p>
-      </div>
-    </div>
-
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden">
-        <img src="edit_IMG_20231102_152345_DG-1024x683.jpg" alt="Duplexkarton" style="width:100%;height:100%;object-fit:cover;display:block">
-      </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Duplexkarton</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7">Die hochwertig bedruckbare Oberfläche des <strong>gestrichenen Duplexkartons</strong> und die graue Rückseite sind die ökonomische Variante für preissensitive Verpackungen. Auch lieferbar mit PE-Beschichtung, gelblicher Rückseite und Wasserdampfsperre. Für mehr Informationen, fragen Sie uns!</p>
+      <div class="vp-card-body">
+        <h3>Papierkissen</h3>
+        <p><strong>Papierkissen</strong>, auch Polsterkissen oder Pralinenpolster genannt, werden hauptsächlich für das Verpacken von liebevoll produzierter und hochwertiger Schokolade eingesetzt. Transportschutz und Marketing gehen Hand in Hand.<br><br>Wir liefern in 3–9 Lagen in weiss, braun oder schwarz. Endlos produziert, auf Mass geschnitten oder gestanzt. Mit Inhouse Flexodruck setzen wir Ihr Logo in Szene. Fragen Sie uns!</p>
       </div>
     </div>
 
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden">
-        <img src="edit_IMG_20231102_151459_Graukarton-1024x683.jpg" alt="Graukarton" style="width:100%;height:100%;object-fit:cover;display:block">
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="DSC01098-1536x1024.jpg" alt="Feinwelle">
       </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Graukarton</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7"><strong>Graukarton</strong> – aus 100% Altpapier gefertigt – wird von Industrie und Gewerbe als Sekundärverpackung für Versand- und Schutzfunktionen eingesetzt. Cartonal AG liefert das gesamte Flächengewichtsspektrum in Rollen und Bogen. Sonderformat, rau, geglättet oder beschichtet? Wir liefern es!</p>
+      <div class="vp-card-body">
+        <h3>Feinwelle</h3>
+        <p><strong>Feinwelle</strong>, aus zwei Lagen Kraftpapier hergestellter Wellkarton, für die hochwertige Verpackung von Biscuits und schlagempfindlichen Lebensmitteln. Mit und ohne Fettdichte, in Rolle oder Zuschnitten – wir haben das passende Produkt für Sie!</p>
       </div>
     </div>
 
-    <div style="background:#fff;padding:0">
-      <div style="aspect-ratio:4/3;overflow:hidden;background:#f5f5f5">
-        <img src="Antirutsch-Karton.png" alt="Antirutschkarton" style="width:100%;height:100%;object-fit:contain;display:block">
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="Bakewell-1536x1024.jpg" alt="Bake-Well">
       </div>
-      <div style="padding:24px">
-        <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px">Antirutschkarton</h3>
-        <p style="font-size:13px;color:#555;line-height:1.7"><strong>Antirutschkarton</strong> – für die Ladungssicherung – mit ein- oder zweiseitiger Beschichtung, meist bräunlich aber auch beige. Antirutschbeschichtete Oberflächen sind auch für direkten Lebensmittelkontakt verfügbar.</p>
+      <div class="vp-card-body">
+        <h3>Backformen Bake-Well®</h3>
+        <p><strong>Backformen Bake-Well®</strong> – Beste Backeigenschaften, exzellenter Transportschutz direkt in der ansprechenden Verpackung für den POS. Für Kuchen, Brot oder Feingebäck — aus dem Haus <a href="http://www.pillopak.nl/" target="_blank">PilloPak</a>. Geeignet für Backofen und Mikrowelle.</p>
+      </div>
+    </div>
+
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="edit_IMG_20231102_152055_TG-1-1024x683.jpg" alt="Triplexkarton">
+      </div>
+      <div class="vp-card-body">
+        <h3>Triplexkarton</h3>
+        <p><strong>Gestrichener Triplexkarton GT2</strong> für ansprechende Verkaufsverpackungen — vielfarbig bedruckbar, prägbar, stanzbar. Lieferbar mit Migrationsbarriere, Fettbarriere, PE-Beschichtung, 2-seitig gestrichen.<br><br><strong>Ungestrichener Triplexkarton UT2</strong>: weiss gedeckt, matter Oberfläche — verhindert Verschmieren bei Inkjet-Strichcodes.</p>
+      </div>
+    </div>
+
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="edit_IMG_20231102_152345_DG-1024x683.jpg" alt="Duplexkarton">
+      </div>
+      <div class="vp-card-body">
+        <h3>Duplexkarton</h3>
+        <p>Die hochwertig bedruckbare Oberfläche des <strong>gestrichenen Duplexkartons</strong> und die graue Rückseite sind die ökonomische Variante für preissensitive Verpackungen. Auch lieferbar mit PE-Beschichtung, gelblicher Rückseite und Wasserdampfsperre. Für mehr Informationen, fragen Sie uns!</p>
+      </div>
+    </div>
+
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="edit_IMG_20231102_151459_Graukarton-1024x683.jpg" alt="Graukarton">
+      </div>
+      <div class="vp-card-body">
+        <h3>Graukarton</h3>
+        <p><strong>Graukarton</strong> – aus 100% Altpapier gefertigt – wird von Industrie und Gewerbe als Sekundärverpackung für Versand- und Schutzfunktionen eingesetzt. Cartonal AG liefert das gesamte Flächengewichtsspektrum in Rollen und Bogen. Sonderformat, rau, geglättet oder beschichtet? Wir liefern es!</p>
+      </div>
+    </div>
+
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="Antirutsch-Karton.png" alt="Antirutschkarton" class="contain">
+      </div>
+      <div class="vp-card-body">
+        <h3>Antirutschkarton</h3>
+        <p><strong>Antirutschkarton</strong> – für die Ladungssicherung – mit ein- oder zweiseitiger Beschichtung, meist bräunlich aber auch beige. Antirutschbeschichtete Oberflächen sind auch für direkten Lebensmittelkontakt verfügbar.</p>
       </div>
     </div>
 
