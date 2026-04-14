@@ -6,6 +6,115 @@
 <title>Hochwertige Spezialpapiere für verschiedene Anwendungen | CARTONAL AG</title>
 <meta name="description" content="Hochwertige Spezialpapiere für Verpackung, Labor und Industrie entdecken. Einseitig silikonisiert, Filterpapier mit Abaca-Fasern, Krepp-Papiere & viel mehr.">
 <link rel="stylesheet" href="style.css">
+<style>
+
+.vp-hero {
+  background: var(--navy);
+  padding: 72px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.vp-hero-text .label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 14px;
+}
+.vp-hero-text h1 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+.vp-hero-text p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+}
+.vp-hero-img {
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+.vp-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vp-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px;
+}
+.vp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 72px;
+}
+.vp-card {
+  background: #fff;
+  border: 1px solid #e8eaf0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.vp-card:hover {
+  box-shadow: 0 8px 32px rgba(15,12,116,0.10);
+  transform: translateY(-3px);
+}
+.vp-card-img {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: #f7f8fb;
+}
+.vp-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vp-card-body {
+  padding: 28px 30px 32px;
+}
+.vp-card-body h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.vp-card-body p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.75;
+}
+.vp-card-body ul {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.75;
+  padding-left: 20px;
+  margin: 8px 0;
+}
+.vp-card-body a {
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .vp-hero { grid-template-columns: 1fr; padding: 48px 24px; }
+  .vp-hero-img { display: none; }
+  .vp-grid { grid-template-columns: 1fr; gap: 16px; }
+  .vp-section { padding: 48px 24px; }
+}
+
+</style>
 </head>
 <body>
 
@@ -36,58 +145,68 @@
   </nav>
 </header>
 
-<!-- PAGE CONTENT -->
-<div class="page-content">
-
-  <h1>Spezialitäten</h1>
-  <p>Im Produktebereich Spezialitäten fassen wir unsere Premium-Produkte zusammen, die mit aussergewöhnlichen Fasern oder Beschichtungen eingesetzt werden:</p>
-
-  <!-- Silikonisierte Papiere -->
-  <div class="media-text">
-    <div class="media-text__media">
-      <img src="Edit_Couvert_Silikon-scaled.jpg" alt="Einseitig silikonisierte Papiere">
-    </div>
-    <div class="media-text__content">
-      <p>Für die Herstellung von Briefumschlägen und Versandtaschen, Boxen und den Hygienebereich liefern wir <strong>einseitig silikonisierte Papiere</strong> in verschiedenen Ausrüstungen in Rollen oder Schmalrollen, auch mit einseitigem Flexodruck.<br>Ob für Automotive, Bau, Laminierung oder Klebeband-Anwendungen – sprechen wir darüber!</p>
-    </div>
+<!-- HERO -->
+<div class="vp-hero">
+  <div class="vp-hero-text">
+    <p class="label">Produktbereich</p>
+    <h1>Spezialitäten</h1>
+    <p>Im Produktebereich Spezialitäten fassen wir unsere Premium-Produkte zusammen, die mit aussergewöhnlichen Fasern oder Beschichtungen eingesetzt werden.</p>
   </div>
-
-  <!-- Lebensmittelfiltration -->
-  <div class="media-text media-right">
-    <div class="media-text__media">
-      <img src="AdobeStock_121027142-scaled.jpeg" alt="Teebeutel">
-    </div>
-    <div class="media-text__content">
-      <p>Die Schweizer Abpacker von Tee und Café betreut <strong>CARTONAL</strong> im Auftrag von <a href="http://www.magnera.com" target="_blank">MAGNERA</a>, dem globalen Marktführer für Langfaserpapieren für die <strong>Lebensmittelfiltration</strong>. Das Papier wird an drei europäischen Standorten hergestellt, wichtigstes Basismaterial sind die natürlichen Fasern der Abaca-Pflanze. Auf Anfrage offerieren wir auch Dreisiegelrandbeutel oder Korbkaffeefilter.</p>
-    </div>
+  <div class="vp-hero-img">
+    <img src="Edit_Couvert_Silikon-scaled.jpg" alt="Spezialitäten">
   </div>
+</div>
 
-  <!-- Filtration & Absorption -->
-  <div class="media-text">
-    <div class="media-text__media">
-      <img src="AdobeStock_293652651-scaled.jpeg" alt="Eine Flüssigkeit wird durch Filterpapier gefiltert">
+<!-- PRODUCT GRID -->
+<div class="vp-section">
+  <div class="vp-grid">
+
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="Edit_Couvert_Silikon-scaled.jpg" alt="Einseitig silikonisierte Papiere">
+      </div>
+      <div class="vp-card-body">
+        <h3>Silikonisierte Papiere</h3>
+        <p>Für die Herstellung von Briefumschlägen und Versandtaschen, Boxen und den Hygienebereich liefern wir <strong>einseitig silikonisierte Papiere</strong> in verschiedenen Ausrüstungen in Rollen oder Schmalrollen, auch mit einseitigem Flexodruck.<br>Ob für Automotive, Bau, Laminierung oder Klebeband-Anwendungen – sprechen wir darüber!</p>
+      </div>
     </div>
-    <div class="media-text__content">
-      <p><strong>Filtration und Absorption</strong> in Labor, Messtechnik und Industrie – Papieren und Kartons für die Filtration und Absorption von Flüssigkeiten ist ein kleiner Markt mit einer sehr anspruchsvollen Kundschaft. Wir unterscheiden verschiedene Anwendungen:</p>
-      <ul>
-        <li>Grossformate als Unterlage für Laboranwendungen</li>
-        <li>Filtration von diversen flüssigen Stoffen in Forschung und Entwicklung</li>
-      </ul>
-      <p>Das Angebot ist so vielfältig wie die möglichen Anwendungen. Informieren Sie uns über Ihre Bedürfnisse, gerne möchten wir auch Ihnen das richtige Produkt vorstellen und liefern.</p>
+
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="AdobeStock_121027142-scaled.jpeg" alt="Teebeutel">
+      </div>
+      <div class="vp-card-body">
+        <h3>Lebensmittelfiltration</h3>
+        <p>Die Schweizer Abpacker von Tee und Café betreut <strong>CARTONAL</strong> im Auftrag von <a href="http://www.magnera.com" target="_blank">MAGNERA</a>, dem globalen Marktführer für Langfaserpapieren für die <strong>Lebensmittelfiltration</strong>. Das Papier wird an drei europäischen Standorten hergestellt, wichtigstes Basismaterial sind die natürlichen Fasern der Abaca-Pflanze. Auf Anfrage offerieren wir auch Dreisiegelrandbeutel oder Korbkaffeefilter.</p>
+      </div>
     </div>
+
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="AdobeStock_293652651-scaled.jpeg" alt="Eine Flüssigkeit wird durch Filterpapier gefiltert">
+      </div>
+      <div class="vp-card-body">
+        <h3>Filtration &amp; Absorption</h3>
+        <p><strong>Filtration und Absorption</strong> in Labor, Messtechnik und Industrie – Papieren und Kartons für die Filtration und Absorption von Flüssigkeiten ist ein kleiner Markt mit einer sehr anspruchsvollen Kundschaft. Wir unterscheiden verschiedene Anwendungen:</p>
+        <ul>
+          <li>Grossformate als Unterlage für Laboranwendungen</li>
+          <li>Filtration von diversen flüssigen Stoffen in Forschung und Entwicklung</li>
+        </ul>
+        <p>Das Angebot ist so vielfältig wie die möglichen Anwendungen. Informieren Sie uns über Ihre Bedürfnisse, gerne möchten wir auch Ihnen das richtige Produkt vorstellen und liefern.</p>
+      </div>
+    </div>
+
+    <div class="vp-card">
+      <div class="vp-card-img">
+        <img src="AdobeStock_175233556-scaled.jpeg" alt="Krepp-Papier">
+      </div>
+      <div class="vp-card-body">
+        <h3>Krepp-Papier</h3>
+        <p><strong>Krepp-Papier</strong> – wird als Unterlage in der Back-Industrie, als Verpackungsmaterial oder auch für medizinische Anwendungen eingesetzt. Die Stärke der Kreppung passen wir auf Ihre Anforderungen an.</p>
+      </div>
+    </div>
+
   </div>
-
-  <!-- Krepp-Papier -->
-  <div class="media-text media-right">
-    <div class="media-text__media">
-      <img src="AdobeStock_175233556-scaled.jpeg" alt="Krepp-Papier">
-    </div>
-    <div class="media-text__content">
-      <p><strong>Krepp-Papier</strong> – wird als Unterlage in der Back-Industrie, als Verpackungsmaterial oder auch für medizinische Anwendungen eingesetzt. Die Stärke der Kreppung passen wir auf Ihre Anforderungen an.</p>
-    </div>
-  </div>
-
-  <hr class="separator">
 
   <div class="cta-block">
     <p>Dürfen wir Sie bei Ihrem Projekt unterstützen?</p>
